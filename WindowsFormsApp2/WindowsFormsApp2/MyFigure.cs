@@ -16,6 +16,7 @@ namespace WindowsFormsApp2
         public virtual int W { get; set; }
         public virtual int H { get; set; }
 
+        public virtual void Fill(Graphics graphics,Color clr) { }
         public virtual void Draw(Graphics graphics)
         {
         }

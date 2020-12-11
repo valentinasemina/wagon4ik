@@ -9,28 +9,21 @@ namespace WindowsFormsApp2
 {
     class MyTrain:MyWagon
     {
-        private int count = 2;
-        private int x, y, w, h, l;
-
-        public override int X { get { return x; } set { x = value;  } }
-        public override int Y { get { return y; } set { y = value; } }
-        public override int W { get { return w; } set { w = value; } }
-        public override int H { get { return h; } set { h = value; } }
-        public override int L { get { return l; } set { l = value; } }
+        private int count = 2;     
         public override int Count { get { return count; } set { count = value; } }
         public override void Draw(Graphics graphics)
         {
             List<MyWagon> MyTrain = new List<MyWagon>();
             for (int i = 0; i < this.Count; i++)
             {
-                MyWagon temp = new MyWagon();
-                temp.X = X + W * i;
-                temp.Y = Y;
-                temp.W = W;
-                temp.H = H;
-                temp.L = L;
-                MyTrain.Add(temp);
-                temp.Draw(graphics);
+                MyWagon wag = new MyWagon();
+                wag.X = X + W * i+i*10;
+                wag.Y = Y;
+                wag.W = W;
+                wag.H = H;
+                wag.L = W;
+                MyTrain.Add(wag);
+                wag.Draw(graphics);
             }
         }
     }

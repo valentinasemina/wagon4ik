@@ -4,59 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace WindowsFormsApp2
 {
     class MyWagon:MyRectangle
-    { 
+    {
+        public MyCircle wheel1 = new MyCircle();
+        public MyCircle wheel2 = new MyCircle();
         public MyWagon() : base()
         {
 
         }
-        private int l = 20;
-        public override int L
-        {
-            get
-            {
-                return l;
-            }
-            set
-            {
-                l = value;
-            }
-        }
-        private void wheel (Graphics graphics, int L)
-        {
-            graphics.DrawEllipse(new Pen(Color.Black), x + L / 3-L/4, y + L / 2, L / 3, L / 3);
-            graphics.DrawEllipse(new Pen(Color.Black), x + L / 3 + L / 3, y + L / 2, L / 3, L / 3);
-        }
-        private int x, y;
-        public override int X
-        {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
-            }
-        }
-        public override int Y
-        {
-            get
-            {
-                return y;
-            }
-            set
-            {
-                y = value;
-            }
-        }
+ 
         public override void Draw(Graphics graphics)
         {
-           graphics.DrawRectangle(new Pen(Color.Black),x,y,l,l/2);
-           wheel(graphics,l);
+            base.Draw(graphics);
+            wheel1.X = X + L / 3 - L / 4;
+            wheel1.Y = Y + H;
+            wheel1.W = L / 3;
+            wheel2.X = X + L / 3 + L / 4;
+            wheel2.Y = Y + H;
+            wheel2.W = L / 3;
+            wheel1.Draw(graphics);
+            wheel2.Draw(graphics);
         }
     }
 }

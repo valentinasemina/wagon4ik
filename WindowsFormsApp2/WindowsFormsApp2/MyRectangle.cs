@@ -58,6 +58,11 @@ namespace WindowsFormsApp2
                     y = value;
                 }
             }
+        public override void Fill(Graphics graphics,Color clr)
+        {
+            SolidBrush brush = new SolidBrush(clr);
+            graphics.FillRectangle(brush, x, y, w, h);
+        }
         public override void Draw(Graphics graph)
         {
             graph.DrawRectangle(new Pen(Color.Black), x, y, w, h);

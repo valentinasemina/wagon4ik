@@ -38,6 +38,8 @@
             this.rbwagon = new System.Windows.Forms.RadioButton();
             this.rbTrain = new System.Windows.Forms.RadioButton();
             this.tbcount = new System.Windows.Forms.TextBox();
+            this.rb_traincoal = new System.Windows.Forms.RadioButton();
+            this.rb_wagonsand = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // rbRectangle
@@ -80,17 +82,17 @@
             // 
             // tb1
             // 
-            this.tb1.Location = new System.Drawing.Point(6, 110);
+            this.tb1.Location = new System.Drawing.Point(6, 145);
             this.tb1.Name = "tb1";
             this.tb1.Size = new System.Drawing.Size(85, 20);
-            this.tb1.TabIndex = 5;
+            this.tb1.TabIndex = 1;
             // 
             // tb2
             // 
-            this.tb2.Location = new System.Drawing.Point(6, 136);
+            this.tb2.Location = new System.Drawing.Point(6, 171);
             this.tb2.Name = "tb2";
             this.tb2.Size = new System.Drawing.Size(85, 20);
-            this.tb2.TabIndex = 6;
+            this.tb2.TabIndex = 2;
             // 
             // btcreate
             // 
@@ -138,16 +140,42 @@
             // 
             // tbcount
             // 
-            this.tbcount.Location = new System.Drawing.Point(6, 162);
+            this.tbcount.Location = new System.Drawing.Point(6, 197);
             this.tbcount.Name = "tbcount";
             this.tbcount.Size = new System.Drawing.Size(85, 20);
-            this.tbcount.TabIndex = 11;
+            this.tbcount.TabIndex = 3;
+            // 
+            // rb_traincoal
+            // 
+            this.rb_traincoal.AutoSize = true;
+            this.rb_traincoal.Location = new System.Drawing.Point(6, 102);
+            this.rb_traincoal.Name = "rb_traincoal";
+            this.rb_traincoal.Size = new System.Drawing.Size(105, 17);
+            this.rb_traincoal.TabIndex = 12;
+            this.rb_traincoal.TabStop = true;
+            this.rb_traincoal.Text = "Wagon with coal";
+            this.rb_traincoal.UseVisualStyleBackColor = true;
+            this.rb_traincoal.CheckedChanged += new System.EventHandler(this.rb_traincoal_CheckedChanged);
+            // 
+            // rb_wagonsand
+            // 
+            this.rb_wagonsand.AutoSize = true;
+            this.rb_wagonsand.Location = new System.Drawing.Point(6, 122);
+            this.rb_wagonsand.Name = "rb_wagonsand";
+            this.rb_wagonsand.Size = new System.Drawing.Size(108, 17);
+            this.rb_wagonsand.TabIndex = 13;
+            this.rb_wagonsand.TabStop = true;
+            this.rb_wagonsand.Text = "Wagon with sand";
+            this.rb_wagonsand.UseVisualStyleBackColor = true;
+            this.rb_wagonsand.CheckedChanged += new System.EventHandler(this.rb_wagonsand_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 389);
+            this.Controls.Add(this.rb_wagonsand);
+            this.Controls.Add(this.rb_traincoal);
             this.Controls.Add(this.tbcount);
             this.Controls.Add(this.rbTrain);
             this.Controls.Add(this.rbwagon);
@@ -179,6 +207,8 @@
         private System.Windows.Forms.RadioButton rbwagon;
         private System.Windows.Forms.RadioButton rbTrain;
         private System.Windows.Forms.TextBox tbcount;
+        private System.Windows.Forms.RadioButton rb_traincoal;
+        private System.Windows.Forms.RadioButton rb_wagonsand;
     }
 }
 

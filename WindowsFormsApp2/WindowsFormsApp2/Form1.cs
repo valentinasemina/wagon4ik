@@ -43,15 +43,19 @@ namespace WindowsFormsApp2
                     draw = new MyRectangle();
                 else if (rbTrain.Checked)
                     draw = new MyTrain();
-                else
+                else if (rbwagon.Checked)
                     draw = new MyWagon();
+                else if (rb_traincoal.Checked)
+                    draw = new WagonCoal();
+                else if (rb_wagonsand.Checked)
+                    draw = new WagonSand();
             }
             draw.X = e.X;
             draw.Y = e.Y;
             draw.W = W;
             draw.H = H;
             draw.L = L;
-            if (rbTrain.Checked)
+            if (rbTrain.Checked || rb_traincoal.Checked || rb_wagonsand.Checked)
             {
                 draw.Count = Count;
             }
@@ -75,7 +79,7 @@ namespace WindowsFormsApp2
         {
             W = 15;
             H = 15;
-            L = 20;
+            L = 15;
             Count = 2;
         }
 
@@ -117,6 +121,18 @@ namespace WindowsFormsApp2
             tb2.Visible = true;
         }
 
+        private void rb_traincoal_CheckedChanged(object sender, EventArgs e)
+        {
+            tbcount.Visible = true;
+            tb2.Visible = true;
+        }
+
+        private void rb_wagonsand_CheckedChanged(object sender, EventArgs e)
+        {
+            tbcount.Visible = true;
+            tb2.Visible = true;
+        }
+
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             IsClicked = false;
@@ -126,7 +142,7 @@ namespace WindowsFormsApp2
 
         private void rbwagon_CheckedChanged(object sender, EventArgs e)
         {
-            tb2.Visible = false;
+            tb2.Visible = true;
             tbcount.Visible = false;
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
