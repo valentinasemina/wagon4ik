@@ -20,7 +20,7 @@ namespace WindowsFormsApp2
         Graphics GRdraw;
         MyFigure draw = new MyFigure();
         List<MyFigure> fig = new List<MyFigure>();
-        int W, H, L;
+        int W, H, L, Count;
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace WindowsFormsApp2
         private void rbRectangle_CheckedChanged(object sender, EventArgs e)
         {
             tb2.Visible = true;
+            tbcount.Visible = false;
         }
 
 
@@ -40,21 +41,33 @@ namespace WindowsFormsApp2
                     draw = new MyCircle();
                 else if (rbRectangle.Checked)
                     draw = new MyRectangle();
-                else
+                else if (rbTrain.Checked)
+                    draw = new MyTrain();
+                else if (rbwagon.Checked)
                     draw = new MyWagon();
-            }
+                else if (rb_traincoal.Checked)
+                    draw = new WagonCoal();
+                else if (rb_wagonsand.Checked)
+                    draw = new WagonSand();
+           
             draw.X = e.X;
             draw.Y = e.Y;
             draw.W = W;
             draw.H = H;
             draw.L = L;
+            if (rbTrain.Checked || rb_traincoal.Checked || rb_wagonsand.Checked)
+            {
+                draw.Count = Count;
+            }
             draw.Draw(GRdraw);
             fig.Add(draw);
+            }
         }
 
         private void rbCircle_CheckedChanged(object sender, EventArgs e)
         {
             tb2.Visible = false;
+            tbcount.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -66,7 +79,8 @@ namespace WindowsFormsApp2
         {
             W = 15;
             H = 15;
-            L = 20;
+            L = 15;
+            Count = 2;
         }
 
         private void btpar_Click(object sender, EventArgs e)
@@ -74,6 +88,7 @@ namespace WindowsFormsApp2
             W = Convert.ToInt32(tb1.Text);
             if (tb2.Visible) H = Convert.ToInt32(tb2.Text);
             L = Convert.ToInt32(tb1.Text);
+            if (tbcount.Visible) Count = Convert.ToInt32(tbcount.Text);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -100,17 +115,36 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void rbTrain_CheckedChanged(object sender, EventArgs e)
+        {
+            tbcount.Visible = true;
+            tb2.Visible = true;
+        }
+
+        private void rb_traincoal_CheckedChanged(object sender, EventArgs e)
+        {
+            tbcount.Visible = true;
+            tb2.Visible = true;
+        }
+
+        private void rb_wagonsand_CheckedChanged(object sender, EventArgs e)
+        {
+            tbcount.Visible = true;
+            tb2.Visible = true;
+        }
+
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             IsClicked = false;
         }
 
+
+
         private void rbwagon_CheckedChanged(object sender, EventArgs e)
         {
-            tb2.Visible = false;
+            tb2.Visible = true;
+            tbcount.Visible = false;
         }
-
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             foreach (MyFigure figure in fig)
