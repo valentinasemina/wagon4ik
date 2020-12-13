@@ -16,16 +16,15 @@ namespace WindowsFormsApp2
         {
 
         }
- 
         public override void Draw(Graphics graphics)
         {
             base.Draw(graphics);
-            wheel1.X = X + L / 3 - L / 4;
+            wheel1.X = X + W / 3 - W / 4;
             wheel1.Y = Y + H;
-            wheel1.W = L / 3;
-            wheel2.X = X + L / 3 + L / 4;
+            wheel1.W = W / 3;
+            wheel2.X = X + W / 3 + W / 4;
             wheel2.Y = Y + H;
-            wheel2.W = L / 3;
+            wheel2.W = W / 3;
             wheel1.Draw(graphics);
             wheel2.Draw(graphics);
         }

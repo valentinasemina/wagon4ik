@@ -55,7 +55,7 @@ namespace WindowsFormsApp2
             draw.W = W;
             draw.H = H;
             draw.L = L;
-            if (rbTrain.Checked || rb_traincoal.Checked || rb_wagonsand.Checked)
+            if (rbTrain.Checked)
             {
                 draw.Count = Count;
             }
@@ -123,13 +123,11 @@ namespace WindowsFormsApp2
 
         private void rb_traincoal_CheckedChanged(object sender, EventArgs e)
         {
-            tbcount.Visible = true;
             tb2.Visible = true;
         }
 
         private void rb_wagonsand_CheckedChanged(object sender, EventArgs e)
         {
-            tbcount.Visible = true;
             tb2.Visible = true;
         }
 
@@ -137,8 +135,6 @@ namespace WindowsFormsApp2
         {
             IsClicked = false;
         }
-
-
 
         private void rbwagon_CheckedChanged(object sender, EventArgs e)
         {

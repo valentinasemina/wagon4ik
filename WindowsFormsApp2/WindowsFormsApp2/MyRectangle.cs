@@ -14,50 +14,10 @@ namespace WindowsFormsApp2
         private int x, y;
         private int w = 20, h = 15;
 
-        public override int W
-        {
-            get
-            {
-                return w;
-            }
-            set
-            {
-                w = value;
-            }
-        }
-        public override int H
-        {
-            get
-            {
-                return h;
-            }
-            set
-            {
-                h = value;
-            }
-        }
-        public override int X
-            {
-                get
-                {
-                    return x;
-                }
-                set
-                {
-                    x = value;
-                }
-            }
-            public override int Y
-            {
-                get
-                {
-                    return y;
-                }
-                set
-                {
-                    y = value;
-                }
-            }
+        public override int H { get { return h; } set { h = value; } }
+        public override int W { get { return w; } set { w = value; } }
+        public override int Y { get { return y; } set { y = value; } }
+        public override int X { get { return x; } set { x = value; } }
         public override void Fill(Graphics graphics,Color clr)
         {
             SolidBrush brush = new SolidBrush(clr);
