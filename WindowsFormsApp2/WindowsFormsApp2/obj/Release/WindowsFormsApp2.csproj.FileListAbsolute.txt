@@ -1,0 +1,10 @@
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\bin\Release\WindowsFormsApp2.exe.config
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\bin\Release\WindowsFormsApp2.exe
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\bin\Release\WindowsFormsApp2.pdb
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.csprojAssemblyReference.cache
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Form1.resources
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Properties.Resources.resources
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.csproj.GenerateResource.cache
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.exe
+E:\ООП\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.pdb
