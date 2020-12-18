@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WindowsFormsApp2
 {
@@ -42,26 +43,26 @@ namespace WindowsFormsApp2
                 else if (rbRectangle.Checked)
                     draw = new MyRectangle();
                 else if (rbTrain.Checked)
-                    draw = new MyTrain();
+                    draw = new MyTrain(Count);
                 else if (rbwagon.Checked)
                     draw = new MyWagon();
                 else if (rb_traincoal.Checked)
                     draw = new WagonCoal();
                 else if (rb_wagonsand.Checked)
                     draw = new WagonSand();
-            }
+           
             draw.X = e.X;
             draw.Y = e.Y;
             draw.W = W;
             draw.H = H;
             draw.L = L;
-            if (rbTrain.Checked || rb_traincoal.Checked || rb_wagonsand.Checked)
+            if (rbTrain.Checked)
             {
                 draw.Count = Count;
             }
-
             draw.Draw(GRdraw);
             fig.Add(draw);
+            }
         }
 
         private void rbCircle_CheckedChanged(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace WindowsFormsApp2
         {
             if (IsClicked)
             {
-                movedFigure.X = e.X - dX;
+                movedFigure.X = e.X+10 - dX;
                 movedFigure.Y = e.Y - dY;
                 panel1.Invalidate();
             }
@@ -123,13 +124,11 @@ namespace WindowsFormsApp2
 
         private void rb_traincoal_CheckedChanged(object sender, EventArgs e)
         {
-            tbcount.Visible = true;
             tb2.Visible = true;
         }
 
         private void rb_wagonsand_CheckedChanged(object sender, EventArgs e)
         {
-            tbcount.Visible = true;
             tb2.Visible = true;
         }
 
@@ -137,8 +136,6 @@ namespace WindowsFormsApp2
         {
             IsClicked = false;
         }
-
-
 
         private void rbwagon_CheckedChanged(object sender, EventArgs e)
         {
